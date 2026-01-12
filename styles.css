@@ -1,0 +1,156 @@
+/* PALETA DE CORES COBMAIS */
+:root {
+    --color-primary: #1A5B8A;
+    --color-secondary: #0099CC;
+    --color-success: #63A948;
+    --color-warning: #FFC107;
+    --color-danger: #DC3545;
+    --color-light-bg: #0A1626;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-light-bg);
+    color: #333;
+    min-height: 100vh;
+    padding-top: 70px; 
+    padding-left: 300px;
+}
+
+.custom-header {
+    background-color: #1E478E;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 300px;
+    right: 0;
+    z-index: 1020;
+}
+
+.card {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 16px; /* Bordas mais modernas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para destacar do fundo escuro */
+}
+
+.section-title {
+    color: var(--color-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sidebar Customizada */
+.client-list-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #15202b;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1030;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.client-item-card {
+    background-color: #1e2732;
+    border: 1px solid #38444d;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.client-item-card:hover {
+    background-color: #273340;
+    transform: translateX(5px);
+}
+
+/* Utilitários de Botões */
+.btn-cobmais-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: opacity 0.2s;
+}
+
+.btn-cobmais-primary:hover {
+    background-color: #154a70;
+    color: white;
+}
+
+.btn-cobmais-success {
+    background-color: var(--color-success);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-cobmais-success:hover {
+    background-color: #528d3a;
+    color: white;
+}
+
+/* Tasks */
+.task-card {
+    border-left: 5px solid var(--color-primary);
+    background-color: white;
+    transition: transform 0.2s;
+}
+
+.task-card:hover {
+    transform: scale(1.01);
+}
+
+.task-card.concluida { border-left-color: var(--color-success); opacity: 0.8; }
+.task-card.pendente { border-left-color: var(--color-warning); }
+.task-card.atrasada { border-left-color: var(--color-danger); animation: pulse-red 2s infinite; }
+
+.overdue-alert-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+    display: none;
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+.btn-cobmais-primary { background-color: var(--color-primary); border-color: var(--color-primary); color: white; }
+.btn-cobmais-success { background-color: var(--color-success); border-color: var(--color-success); color: white; }
+
+/* Estilo para os botões de filtro no container de busca */
+#search-container .btn-sm {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Exemplo para o botão de tarefas atrasadas */
+#show-overdue-tasks-btn {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+}
+#show-overdue-tasks-btn:hover {
+    background-color: var(--color-danger);
+    color: white;
+}
